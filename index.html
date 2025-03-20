@@ -3,235 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Carte d'Identité de Santé</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #009639;
-      --secondary-color: #FFD100;
-      --red-color: #CE1126;
-      --light-gray: #f4f4f4;
-      --border-color: #ddd;
-      --dark-gray: #333;
-      --font-family: 'Roboto', sans-serif;
-      --padding: 20px;
-      --photo-width: 120px;
-      --photo-height: 150px;
-      --transition: 0.3s ease;
-    }
-    body {
-      font-family: var(--font-family);
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-    .card-container {
-      width: 100%;
-      max-width: 600px;
-      background-color: #ffffff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-      border: 2px solid var(--primary-color);
-      animation: fadeIn 0.5s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-    .header {
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--red-color));
-      color: #fff;
-      text-align: center;
-      padding: var(--padding);
-      font-size: 26px;
-      font-weight: 700;
-      text-transform: uppercase;
-      position: relative;
-      border-bottom: 4px solid var(--primary-color);
-      letter-spacing: 1px;
-    }
-    .header::before {
-      content: "RÉPUBLIQUE DU MALI";
-      position: absolute;
-      top: 10px;
-      left: 15px;
-      font-size: 12px;
-      font-weight: 500;
-      text-transform: uppercase;
-      opacity: 0.8;
-    }
-    .header::after {
-      content: "Ministère de la Santé";
-      position: absolute;
-      bottom: 10px;
-      right: 15px;
-      font-size: 12px;
-      font-style: italic;
-      opacity: 0.8;
-    }
-    .virtual-card {
-      margin: var(--padding);
-      border: 2px solid var(--primary-color);
-      border-radius: 12px;
-      overflow: hidden;
-      background: #fafafa;
-      transition: transform var(--transition);
-    }
-    .virtual-card:hover {
-      transform: scale(1.02);
-    }
-    .virtual-card h2 {
-      font-size: 22px;
-      text-align: center;
-      color: var(--primary-color);
-      margin: var(--padding) 0;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 10px;
-    }
-    .info-section {
-      display: flex;
-      align-items: center;
-      padding: var(--padding);
-      border-bottom: 1px solid var(--border-color);
-      background-color: #fff;
-    }
-    .photo-container {
-      width: var(--photo-width);
-      height: var(--photo-height);
-      background-color: var(--border-color);
-      border: 2px solid var(--primary-color);
-      border-radius: 8px;
-      margin-right: 20px;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    .photo-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: opacity var(--transition);
-    }
-    .photo-container img:hover {
-      opacity: 0.8;
-    }
-    .info p {
-      margin: 6px 0;
-      font-size: 16px;
-      line-height: 1.4;
-      color: var(--dark-gray);
-    }
-    .info p strong {
-      color: var(--primary-color);
-    }
-    .card-content {
-      padding: 10px var(--padding);
-      background-color: var(--light-gray);
-    }
-    .card-content p {
-      margin: 8px 0;
-      font-size: 16px;
-      color: var(--dark-gray);
-    }
-    .health-summary {
-      padding: 0 var(--padding) var(--padding);
-    }
-    .health-summary h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: var(--primary-color);
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 5px;
-    }
-    .health-summary p {
-      font-size: 16px;
-      margin: 5px 0;
-      color: var(--dark-gray);
-    }
-    .health-summary ul {
-      list-style-type: disc;
-      margin-left: 20px;
-      color: var(--dark-gray);
-    }
-    .footer {
-      background-color: var(--light-gray);
-      text-align: center;
-      padding: var(--padding);
-      font-size: 14px;
-      border-top: 1px solid var(--border-color);
-      font-weight: 700;
-      color: var(--primary-color);
-    }
-    @media (max-width: 600px) {
-      .info-section {
-        flex-direction: row;
-        text-align: left;
-      }
-      .photo-container {
-        margin-right: 15px;
-      }
-      .virtual-card h2,
-      .health-summary h3 {
-        font-size: 18px;
-      }
-    }
-  </style>
+  <title>Connexion</title>
+ 
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/fontawesome.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="shortcut icon" href="images/logo-headth.jpeg" type="image/x-icon">
 </head>
 <body>
-  <div class="card-container">
-    <div class="header">
-      INFORMATIONS SUR LA SANTÉ
-    </div>
-    <section class="virtual-card">
-      <h2>Carte d'identité Virtuelle</h2>
-      <div class="info-section">
-        <div class="photo-container">
-          <img src="https://via.placeholder.com/120x150" alt="Photo de l'identité">
+    <div class="login-container">
+        <h2><i class="fas fa-heartbeat me-2 text-warning"></i></i>Connexion</h2>
+        
+        <div class="mb-3">
+            <label for="phone" class="form-label py-2">Numéro de téléphone</label>
+            <div class="input-group py-2">
+                <span class="input-group-text"><i class="fas fa-phone text-warning fa-1x"></i></span>
+                <input type="tel" class="form-control" id="phone" placeholder="Entrez votre numéro">
+            </div>
         </div>
-        <div class="info">
-          <p><strong>Nom :</strong> Fofana</p>
-          <p><strong>Prénom :</strong> Moussa</p>
-          <p><strong>Groupe sanguin :</strong> O+</p>
-          <p><strong>ID Patient :</strong> 123456789</p>
+
+        <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="robotCheck">
+        <label class="form-check-label notRobot" for="robotCheck">Je ne suis pas un robot</label>
         </div>
-      </div>
-      <div class="card-content">
-        <p><strong>Bilan Santé :</strong> Aucun problème majeur détecté.</p>
-        <p><strong>Dernière Vaccination :</strong> Janvier 2025</p>
-      </div>
-    </section>
-    <section class="health-summary">
-      <h3>Bilan Santé — 18 Mars 2025</h3>
-      <p>Aucun problème majeur détecté. Tension et glycémie normales.</p>
-      <p>Vaccinations à jour. Dernier rappel : Janvier 2025.</p>
-    </section>
-    <section class="health-summary">
-      <h3>Bilan Santé — 15 Février 2025</h3>
-      <p>Légère anémie détectée. Suppléments de fer prescrits.</p>
-      <p>Recommandation : alimentation riche en fer et contrôle dans 3 mois.</p>
-    </section>
-    <section class="health-summary">
-      <h3>Bilan Santé — 10 Janvier 2025</h3>
-      <p>Aucun problème détecté. Examen médical complet effectué.</p>
-      <p>Recommandation : Maintenir un mode de vie sain et faire un contrôle annuel.</p>
-    </section>
-    <section class="health-summary">
-      <h3>Fonctionnalités Suivies</h3>
-      <ul>
-        <li>Consultation médicale</li>
-        <li>Prise de rendez-vous en ligne</li>
-        <li>Historique des bilans de santé</li>
-        <li>Suivi des traitements et prescriptions</li>
-      </ul>
-    </section>
-    <div class="footer">
-      ©️ 2025 - Ministère de la Santé, République du Mali
+
+        <a href="home.html"><button type="submit" class="btn btn-primary fs-5 text-white">Se connecter</button></a>
     </div>
-  </div>
+
+  <!-- Custom JS -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

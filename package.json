@@ -1,7 +1,7 @@
 {
   "name": "card_project",
   "version": "1.0.0",
-  "main": "login.html",
+  "main": "index.html",
   "scripts": {
     "sass:build": "sass --no-source-map scss:css",
     "sass:watch": "sass --no-source-map --watch scss:css"
